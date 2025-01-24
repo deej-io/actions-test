@@ -1,0 +1,14 @@
+name: Test
+
+on:
+  push:
+    branches: [ main ]
+    tags: [ v* ]
+
+jobs:
+  print-event:
+    name: Print event
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "Event: ${{ github.event_name }} ${{ github.event.ref_type }} ${{ github.event.ref }}"
